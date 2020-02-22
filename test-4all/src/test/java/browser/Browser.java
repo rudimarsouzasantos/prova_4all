@@ -4,6 +4,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Browser extends Driver {
 
@@ -50,11 +53,41 @@ public class Browser extends Driver {
 			}
 
 			if (browserName.equals("firefox")) {
-				// TODO Auto-generated method stub
+				try {
+					System.setProperty("webdriver.gecko.driver", "C:\\webdriver\\firefox\\geckodriver.exe");
+					FirefoxOptions options = new FirefoxOptions();
+					options.addArguments(executionMode, "--ignore-certificate-errors");
+					driver = new FirefoxDriver(options);
+					driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+					break;
+
+				} catch (Exception msgError) {
+					msgError.printStackTrace();
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					continue;
+				}
 			}
 
 			if (browserName.equals("iexplore")) {
-				// TODO Auto-generated method stub
+				try {
+					System.setProperty("webdriver.ie.driver", "C:\\webdriver\\iexplore\\IEDriverServer.exe");
+					driver = new InternetExplorerDriver();
+					driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+					break;
+
+				} catch (Exception msgError) {
+					msgError.printStackTrace();
+					try {
+						Thread.sleep(1000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					continue;
+				}
 			}
 
 			if (browserName.equals("opera")) {

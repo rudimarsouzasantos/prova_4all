@@ -60,7 +60,7 @@ public class Utilit {
 		}
 	}
 
-	public void waitTextAppearInElement(WebDriver driver, String element, String textElement, String tpElement) {
+	/*public void waitTextAppearInElement(WebDriver driver, String element, String textElement, String tpElement) {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -105,5 +105,5 @@ public class Utilit {
 				}
 			}
 		}
-	}
+	}*/
 }
