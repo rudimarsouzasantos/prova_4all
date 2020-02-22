@@ -11,6 +11,10 @@ public class M_GroceryItem {
 	String idBuyCart = "cart-btn";
 	String idAddItemBrigadeiro = "add-product-4-qtd";
 	String idQtdItemBrigadeiro = "product-4-qtd";
+	String idBtnFinishCheckOut = "finish-checkout-button";
+	String xPathMsgCompletedOrder = "//*[@id='root']/div[3]/div/div/div/h2";
+	String TXTMSGCOMPLETEDORDER = "Pedido realizado com sucesso!";
+	String xPathBtnClose = "//*[@id=\"root\"]/div[3]/div/div/div/button";
 	
 	public String getIdSlcCategoryItem() {
 		return idSlcCategoryItem;
@@ -36,12 +40,28 @@ public class M_GroceryItem {
 		return idAddItemBrigadeiro;
 	}
 	
+	public String getIdBtnFinishCheckOut() {
+		return idBtnFinishCheckOut;
+	}
+	
 	public String getXPathTitleSlcCategory() {
 		return xPathTitleSlcCategory;
 	}
 	
+	public String getXPathMsgCompletedOrder() {
+		return xPathMsgCompletedOrder;
+	}
+	
+	public String getXPathBtnClose() {
+		return xPathBtnClose;
+	}
+	
 	public String getTEXTTITLESLCCATEGORY() {
 		return TEXTTITLESLCCATEGORY;
+	}
+	
+	public String getTXTMSGCOMPLETEDORDER() {
+		return TXTMSGCOMPLETEDORDER;
 	}
 	
 	public String getIdQtdItemBrigadeiro() {
